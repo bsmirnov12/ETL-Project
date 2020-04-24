@@ -34,9 +34,16 @@ Car keys:
 * **model** - car model
 * **submodel** - car trim level or other specs that are a part of car's listing, i.e. Nissan Rougue **SL**
 * **year** - car production year, as integer
+* **body_style** - coup, wagon, sedan, etc.
+* **doors** - as integer, number of doors
+* **passengers** - as integer, number of passengers
 * **int_color**, **ext_color**
 * **transmission** - manual, automatic
-* **description** - free text
+* **drivetrain** - FWD, RWD, AWD
+* **cylinders** - as integer, number of cylinders
+* **displacement** - as float, engine displacement in litres
+* **description** - free form text
+* **url** - URL to car's page at dealer website
 * ??? open for suggestions
 
 I guess we have to agree on minimal mandatory subset of key-names, but it is ok if our scraped data is a little bit different - we can always rename keys in a collection using MongoDb commands, or with search-n-replace directly in text files.
