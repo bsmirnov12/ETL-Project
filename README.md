@@ -15,7 +15,11 @@ Dealer keys (contact information is found at the bottom of the front page):
 * **zip** - postal code (i.e. *L4T1A3*)
 * **province** - province abbreviation (i.e. *ON*)
 * **phone** - contact phone number (i.e. *905-460-9624*)
+
+
 Optional, extra effort (but would be cool, if we use Google Maps API to query this info)
+
+
 * **latitude**, **longitude** - geographic coordinates (can be used to find a dealer in certain range from customer's home)
 
 Car keys:
