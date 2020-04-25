@@ -1,12 +1,1 @@
-{
-    "id": "rahmanmotors",
-    "name": "Rahman Motors",
-    "street": "6455 Mississauga Rd",
-    "city": "Mississauga",
-    "zip": "L5N1A6",
-    "province": "ON",
-    "phone": "647-740-9312",
-    "url": "https://www.rahmanmotors.com",
-    "latitude": "43.597561",
-    "longitude": "-79.734300"
-}
+{"id": "rahmanmotors", "name": "Rahman Motors", "street": "6455 Mississauga Rd", "city": "Mississauga", "zip": "L5N1A6", "province": "ON", "phone": "647-740-9312", "url": "https://www.rahmanmotors.com", "latitude": "43.597561", "longitude": "-79.734300"}

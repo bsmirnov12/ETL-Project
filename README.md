@@ -43,6 +43,7 @@ Car keys:
 * **cylinders** - as integer, number of cylinders
 * **displacement** - as float, engine displacement in litres
 * **description** - free form text
+* **features** - as list of strings, list of features and options
 * **url** - URL to car's page at dealer website
 * ??? open for suggestions
 
