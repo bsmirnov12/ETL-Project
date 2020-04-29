@@ -141,4 +141,22 @@ Car:
 * **features** - as list of strings, list of features and options
 * **url** - URL to car's page at dealer website
 
+### Example Queries
+
+## Use cars_db
+
+## 1) Creating a collection of premium cars
+```
+db.inventory.find({'make': {'$in': ['Acura','Audi','Aston Martin','Bentley','BMW','Buick','Bugatti','Cadillac','Ferrari','Genesis','Infiniti','Jaguar','Land Rover','Lamborghini','Lexus','Lincoln','Maserati','Maybach','Mercedes-Benz','Porsche','Rolls-Royce']}}).forEach(function(doc) { db.premium.insert(doc);});
+```
+
+## 2)Creating a collection of late model year cars
+```
+db.inventory.find({'year': {'$in': ['2020','2019','2018','2017','2016','2015']}}).forEach(function(doc) { db.late_model.insert(doc);});
+```
+
+## 3)Creating a collection of SUVs
+```
+db.inventory.find({'body_style': {'$in': ['SUV']}}).forEach(function(doc) { db.SUV.insert(doc);});
+```
 
