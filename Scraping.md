@@ -45,7 +45,6 @@ Car keys:
 * **description** - free form text
 * **features** - as list of strings, list of features and options
 * **url** - URL to car's page at dealer website
-* ??? open for suggestions
 
 I guess we have to agree on minimal mandatory subset of key-names, but it is ok if our scraped data is a little bit different - we can always rename keys in a collection using MongoDb commands, or with search-n-replace directly in text files.
 
