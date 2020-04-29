@@ -46,7 +46,7 @@ it returned HTML with text: "Not Acceptable!". Switching to *splinter* library s
 #### Inifinite Scroll
 
 "Auto 8000" used Inifinite Scroll on its inventory page: when opened, the web page showed only 6 cars, but when
-scrolling down the page, java scrip pulled additional 6 cars from the server. To overcome this, extraction script
+scrolling down the page, java script pulled additional 6 cars from the server. To overcome this, extraction script
 used *splinter* to run our java script snippet that automatically scrolled the page until all cars from the inventory
 were loaded. Only after that the inventory was retrieved.
 
@@ -59,10 +59,10 @@ The convertion of one to another, performed in the scraing scripts, constitutes 
 Extracted string from web pages were transformed based on the semantics of data.
 For example, the price information is typically represented on a web page as a string in a form ``$15,960.00``,
 however, in the database it should be interpreted as integer in a form ``15960``. Such kind of tranformations
-were performed on site by site basis, based on peculiarities of a given web site.
+were performed on individual basis, based on peculiarities of a given web site.
 Other fields that were subject to similar interpretations: number of seats, number of cylinders, engine displacement.
 
-Some effort was made to clean up textual description filed, that contained a lot of advertisement related information, 
+Some effort was made to clean up textual description field, that contained a lot of advertisement related information, 
 that would be completely useless in business application.
 
 
@@ -76,16 +76,17 @@ The following ways of loading data were tested and confirmed to work:
 
 * Command line utility: ``mongoimport --db cars_db --collection inventory --file data/auto8000.json``
 * MongoDB Compass using *Import File* feature
-* MongoDB Compass using *Insert Document feature
+* MongoDB Compass using *Insert Document* feature
 * *pymongo* library in ``CarsDBConstructor2.ipynb`` Jupyter Notebook, that loads all the scraped data into the database
 
 During development of our data import procedure, we encountered some problems, that prevented data to load.
 Notably, using ``json.dumps()`` function for saving documents into files produced unsatisfactory results - the files
 wouldn't load. Investigation revealed, that the correct format should be:
-* only spaces are allowd in a single jason document - the whole structure should be in one line
+* only spaces are allowd in a single JSON document - the whole structure should be in one line
 * a set of documents should be saved in a file one per line - no other separator then new-line characted should
 be between JSON documents
-To implement these requirements, we used ``jason.dumps()`` funcion which was called for every single document when
+
+To implement these requirements, we used ``json.dumps()`` funcion which was called for every single document when
 saving them to a file.
 
 
@@ -145,17 +146,17 @@ Car:
 
 use cars_db
 
-## 1) Creating a collection of premium cars
+#### 1) Creating a collection of premium cars
 ```
 db.inventory.find({'make': {'$in': ['Acura','Audi','Aston Martin','Bentley','BMW','Buick','Bugatti','Cadillac','Ferrari','Genesis','Infiniti','Jaguar','Land Rover','Lamborghini','Lexus','Lincoln','Maserati','Maybach','Mercedes-Benz','Porsche','Rolls-Royce']}}).forEach(function(doc) { db.premium.insert(doc);});
 ```
 
-## 2)Creating a collection of late model year cars
+#### 2) Creating a collection of late model year cars
 ```
 db.inventory.find({'year': {'$in': ['2020','2019','2018','2017','2016','2015']}}).forEach(function(doc) { db.late_model.insert(doc);});
 ```
 
-## 3)Creating a collection of SUVs
+#### 3)Creating a collection of SUVs
 ```
 db.inventory.find({'body_style': {'$in': ['SUV']}}).forEach(function(doc) { db.SUV.insert(doc);});
 ```
