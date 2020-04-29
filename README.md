@@ -143,7 +143,7 @@ Car:
 
 ### Example Queries
 
-## Use cars_db
+use cars_db
 
 ## 1) Creating a collection of premium cars
 ```
