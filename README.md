@@ -115,7 +115,7 @@ Dealer (contact information as found at the bottom of the front page):
 * **province** - province abbreviation (i.e. *ON*)
 * **phone** - contact phone number (i.e. *905-460-9624*)
 * **url** - website (i.e. *https://www.khushiauto.ca*)
-* **latitude**, **longitude** - geographic coordinates from Google Maps
+* **latitude**, **longitude** - as float, geographic coordinates from Google Maps
 (can be used to find a dealer in certain range from customer's home)
 
 Car:
@@ -123,7 +123,7 @@ Car:
 * **timestamp** - a timestamp for when this car info was scraped, can be obtained with `datetime.now().isoformat()`
 * **dealer** - dealer Id
 * **stock_id** - some dealer specific id of the scraped car
-* **vin**
+* **vin** - Vehicle Identification Number
 * **mileage** - as integer
 * **price** - as integer
 * **make** - car manufacturer
@@ -153,10 +153,10 @@ db.inventory.find({'make': {'$in': ['Acura','Audi','Aston Martin','Bentley','BMW
 
 #### 2) Creating a collection of late model year cars
 ```
-db.inventory.find({'year': {'$in': ['2020','2019','2018','2017','2016','2015']}}).forEach(function(doc) { db.late_model.insert(doc);});
+db.inventory.find({'year': {'$in': [ 2020,2019,2018,2017,2016,2015]}}).forEach(function(doc) { db.late_model.insert(doc);});
 ```
 
-#### 3)Creating a collection of SUVs
+#### 3) Creating a collection of SUVs
 ```
 db.inventory.find({'body_style': {'$in': ['SUV']}}).forEach(function(doc) { db.SUV.insert(doc);});
 ```
