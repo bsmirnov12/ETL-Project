@@ -54,7 +54,7 @@ were loaded. Only after that the inventory was retrieved.
 
 Source data (car information) was initially represented as poorly structured text in HTML format.
 The result of the extraction - JSON files with well structured data suitable for loading into MongoDB.
-The convertion of one to another, performed in the scraing scripts, constitutes **transformation** phase.
+The convertion of one to another, performed in the scraping scripts, constitutes **transformation** phase.
 
 Extracted string from web pages were transformed based on the semantics of data.
 For example, the price information is typically represented on a web page as a string in a form ``$15,960.00``,
@@ -80,7 +80,7 @@ The following ways of loading data were tested and confirmed to work:
 * *pymongo* library in ``CarsDBConstructor2.ipynb`` Jupyter Notebook, that loads all the scraped data into the database
 
 During development of our data import procedure, we encountered some problems, that prevented data to load.
-Notably, using ``json.dumps()`` function for saving documents into files produced unsatisfactory results - the files
+Notably, using ``json.dump()`` function for saving documents into files produced unsatisfactory results - the files
 wouldn't load. Investigation revealed, that the correct format should be:
 * only spaces are allowd in a single JSON document - the whole structure should be in one line
 * a set of documents should be saved in a file one per line - no other separator then new-line characted should
